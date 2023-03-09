@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css");
+* {
+    margin: 10px;
+}
+
+main {
+    background-color: #333;
+    padding: 10px;
+}
+.titulo{
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.producto-img{
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+}
+footer {
+    background-color: blueviolet;
+    font-weight: 700;
+    padding: 10px;
+    color: #333;
+}
+
+.div-carrito {
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
