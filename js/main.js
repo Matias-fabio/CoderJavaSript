@@ -1,15 +1,20 @@
+const productos = [{id: 1, nombre: 'sabana', precio: 2000},
+{id: 1, nombre: 'frasada', precio: 4500},
+{id: 1, nombre: 'almohada', precio: 8000},
+{id: 1, nombre: 'colchon', precio: 90000}]
 
-const listaProductos = "Nuestra lista de  productos \n" +
-                    "1) Sabana - $2000\n" +
-                    "2) frasada - $4500\n" +
-                    "3) almohada - $8000 \n" +
-                    "4) colchon - $90000"
+let carrito = []
+
+
+
 
 let seleccion = true
 while(seleccion){
     seleccion = confirm("Hola buen dia. Desea comprar algun producto?")
     if(seleccion == true){
-        alert (listaProductos)
+        let todosLosProductos = productos.map((producto) => producto.nombre + "  $" + producto.precio)
+        alert("Nuestra lista de productos:")
+        alert(todosLosProductos.join("\n"))
         agregarProductos()
     }
     else{
@@ -18,38 +23,32 @@ while(seleccion){
 }
 
 function agregarProductos(){
-    let total = 0
+
     while(seleccion){
         let producto = prompt("agrega un producto a tu carrito")
         let precio = 0
-        let unidades = 0
+
         if(producto == "sabana" || producto == "frasada" || producto == "almohada" || producto == 
         "colchon"){
             switch(producto){
                 case "sabana":
                     precio = 2000
-                    unidades = parseInt(prompt("cuantas unidades quiere llevar?"))
-                    alert("Subtotal de este producto:" + " $" + calcularSubTotal(precio, unidades))
                     break
                 case "frasada":
                     precio = 4500
-                    unidades = parseInt(prompt("cuantas unidades quiere llevar?"))
-                    alert("Subtotal de este producto:" + " $" + calcularSubTotal(precio, unidades))
                     break
                 case "almohada":
                     precio = 8000
-                    unidades = parseInt(prompt("cuantas unidades quiere llevar?"))
-                    alert("Subtotal de este producto:" + " $" + calcularSubTotal(precio, unidades))
                     break
                 case "colchon":
                     precio = 90000
-                    unidades = parseInt(prompt("cuantas unidades quiere llevar?"))
-                    alert("Subtotal de este producto:" + " $" + calcularSubTotal(precio, unidades))
                     break 
                 default: console.error("Ingresa un dato válido, por favor.")
                     return 
             }
-            total += calcularSubTotal(precio, unidades)
+        let unidades = parseInt(prompt("cuantas unidades quiere llevar?"))
+
+        carrito.push({producto, unidades, precio})
         
         }else{
             alert("no disponemos ese producto")
@@ -57,14 +56,13 @@ function agregarProductos(){
         seleccion = confirm("desea seguir comprando?")
 
         while(seleccion === false){
-            alert("Gracias por su compra. El total a abonar es: " + " $" + total)
-            break
+            carrito.forEach((carritoFinal) => {
+                alert(`producto: ${carritoFinal.producto}, unidades: ${carritoFinal.unidades}, total a pagar por producto ${carritoFinal.unidades * carritoFinal.precio}`)
+            })
+        break
         }
     }
-}
+    const total = carrito.reduce((acc, producto) => acc + producto.precio * producto.unidades, 0)
+    alert(`Gracias por su compra. El total a abonar es: ${total} `) 
 
-function calcularSubTotal(precio, unidades){
-    let subTotal = 0
-    subTotal = precio * unidades
-    return subTotal
 }
