@@ -1,0 +1,182 @@
+[
+    {
+        "id": "Motherboard-01",
+        "titulo": "Motherboard 01",
+        "imagen": "./img/motherboard/MB04.png",
+        "categoria": {
+            "nombre": "motherboards",
+            "id": "motherboards"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Motherboard-02",
+        "titulo": "Motherboard 02",
+        "imagen": "./img/motherboard/MB02.png",
+        "categoria": {
+            "nombre": "motherboards",
+            "id": "motherboards"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Motherboard-03",
+        "titulo": "Motherboard 03",
+        "imagen": "./img/motherboard/MB03.png",
+        "categoria": {
+            "nombre": "motherboards",
+            "id": "motherboards"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Motherboard-04",
+        "titulo": "Motherboard 04",
+        "imagen": "./img/motherboard/MB04.png",
+        "categoria": {
+            "nombre": "motherboards",
+            "id": "motherboards"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "Motherboard-05",
+        "titulo": "Motherboard 05",
+        "imagen": "./img/motherboard/MB03.png",
+        "categoria": {
+            "nombre": "motherboards",
+            "id": "motherboards"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "fuente-01",
+        "titulo": "fuente 01",
+        "imagen": "./img/fuentes/fue04.png",
+        "categoria": {
+            "nombre": "fuentes",
+            "id": "fuentes"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "fuente-02",
+        "titulo": "fuente 02",
+        "imagen": "./img/fuentes/fue02.png",
+        "categoria": {
+            "nombre": "fuentes",
+            "id": "fuentes"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "fuente-03",
+        "titulo": "fuente 03",
+        "imagen": "./img/fuentes/fue03.png",
+        "categoria": {
+            "nombre": "fuentes",
+            "id": "fuentes"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "fuente-04",
+        "titulo": "fuente 04",
+        "imagen": "./img/fuentes/fue04.png",
+        "categoria": {
+            "nombre": "fuente",
+            "id": "fuentes"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "fuente-05",
+        "titulo": "fuente 05",
+        "imagen": "./img/fuentes/fue05.webp",
+        "categoria": {
+            "nombre": "fuentes",
+            "id": "fuentes"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "fuente-06",
+        "titulo": "fuente 06",
+        "imagen": "./img/fuentes/fue03.png",
+        "categoria": {
+            "nombre": "fuentes",
+            "id": "fuentes"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "fuente-07",
+        "titulo": "fuente 07",
+        "imagen": "./img/fuentes/fue02.png",
+        "categoria": {
+            "nombre": "fuentes",
+            "id": "fuentes"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "fuente-08",
+        "titulo": "fuente 08",
+        "imagen": "./img/fuentes/fue03.png",
+        "categoria": {
+            "nombre": "fuentes",
+            "id": "fuentes"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "notebook-01",
+        "titulo": "notebook 01",
+        "imagen": "./img/notebooks/NET04.png",
+        "categoria": {
+            "nombre": "notebooks",
+            "id": "notebooks"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "notebook-02",
+        "titulo": "notebook 02",
+        "imagen": "./img/notebooks/NET06.png",
+        "categoria": {
+            "nombre": "notebooks",
+            "id": "notebooks"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "notebook-03",
+        "titulo": "notebook 03",
+        "imagen": "./img/notebooks/NET03.png",
+        "categoria": {
+            "nombre": "notebooks",
+            "id": "notebooks"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "notebook-04",
+        "titulo": "notebook 04",
+        "imagen": "./img/notebooks/NET04.png",
+        "categoria": {
+            "nombre": "notebooks",
+            "id": "notebooks"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "notebook-05",
+        "titulo": "notebook 05",
+        "imagen": "./img/notebooks/NET06.png",
+        "categoria": {
+            "nombre": "notebooks",
+            "id": "notebooks"
+        },
+        "precio": 1000
+    }
+]

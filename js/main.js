@@ -1,68 +1,106 @@
-const productos = [{id: 1, nombre: 'sabana', precio: 2000},
-{id: 1, nombre: 'frasada', precio: 4500},
-{id: 1, nombre: 'almohada', precio: 8000},
-{id: 1, nombre: 'colchon', precio: 90000}]
+let productos = []
 
-let carrito = []
+fetch("./js/productos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data
+        cargarProductos(productos)
+    })
 
 
+const contenedorProductos = document.querySelector("#contenedor-productos")
+const botonesCategorias = document.querySelectorAll(".boton-categoria")
+const tituloPrincipal = document.querySelector("#titulo-principal")
+let botonesAgregar = document.querySelectorAll(".producto-agregar")
+const numerito = document.querySelector("#numerito")
 
 
-let seleccion = true
-while(seleccion){
-    seleccion = confirm("Hola buen dia. Desea comprar algun producto?")
-    if(seleccion == true){
-        let todosLosProductos = productos.map((producto) => producto.nombre + "  $" + producto.precio)
-        alert("Nuestra lista de productos:")
-        alert(todosLosProductos.join("\n"))
-        agregarProductos()
-    }
-    else{
-        alert("Muchas gracias por su visita")
-    }
+botonesCategorias.forEach(boton => boton.addEventListener("click", () => {
+    aside.classList.remove("aside-visible")
+}))
+
+
+function cargarProductos(productosElegidos) {
+
+    contenedorProductos.innerHTML = ""
+
+    productosElegidos.forEach(producto => {
+
+        const div = document.createElement("div")
+        div.classList.add("producto")
+        div.innerHTML = `
+            <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
+            <div class="producto-detalles">
+                <h3 class="producto-titulo">${producto.titulo}</h3>
+                <p class="producto-precio">$${producto.precio}</p>
+                <button class="producto-agregar" id="${producto.id}">Sumar al Carrito</button>
+            </div>
+        `
+
+        contenedorProductos.append(div)
+    })
+
+    actualizarBotonesAgregar()
 }
 
-function agregarProductos(){
 
-    while(seleccion){
-        let producto = prompt("agrega un producto a tu carrito")
-        let precio = 0
+botonesCategorias.forEach(boton => {
+    boton.addEventListener("click", (e) => {
 
-        if(producto == "sabana" || producto == "frasada" || producto == "almohada" || producto == 
-        "colchon"){
-            switch(producto){
-                case "sabana":
-                    precio = 2000
-                    break
-                case "frasada":
-                    precio = 4500
-                    break
-                case "almohada":
-                    precio = 8000
-                    break
-                case "colchon":
-                    precio = 90000
-                    break 
-                default: console.error("Ingresa un dato válido, por favor.")
-                    return 
-            }
-        let unidades = parseInt(prompt("cuantas unidades quiere llevar?"))
+        botonesCategorias.forEach(boton => boton.classList.remove("active"))
+        e.currentTarget.classList.add("active")
 
-        carrito.push({producto, unidades, precio})
-        
-        }else{
-            alert("no disponemos ese producto")
+        if (e.currentTarget.id != "todos") {
+            const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id)
+            tituloPrincipal.innerText = productoCategoria.categoria.nombre
+            const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id)
+            cargarProductos(productosBoton)
+        } else {
+            tituloPrincipal.innerText = "Todos los productos"
+            cargarProductos(productos)
         }
-        seleccion = confirm("desea seguir comprando?")
 
-        while(seleccion === false){
-            carrito.forEach((carritoFinal) => {
-                alert(`producto: ${carritoFinal.producto}, unidades: ${carritoFinal.unidades}, total a pagar por producto ${carritoFinal.unidades * carritoFinal.precio}`)
-            })
-        break
-        }
+    })
+})
+
+function actualizarBotonesAgregar() {
+    botonesAgregar = document.querySelectorAll(".producto-agregar")
+
+    botonesAgregar.forEach(boton => {
+        boton.addEventListener("click", agregarAlCarrito)
+    })
+}
+
+let productosEnCarrito;
+
+let productosEnCarritoLS = localStorage.getItem("productos-en-carrito")
+
+if (productosEnCarritoLS) {
+    productosEnCarrito = JSON.parse(productosEnCarritoLS)
+    actualizarNumerito()
+} else {
+    productosEnCarrito = []
+}
+
+function agregarAlCarrito(e) {
+
+    const idBoton = e.currentTarget.id
+    const productoAgregado = productos.find(producto => producto.id === idBoton)
+
+    if (productosEnCarrito.some(producto => producto.id === idBoton)) {
+        const index = productosEnCarrito.findIndex(producto => producto.id === idBoton)
+        productosEnCarrito[index].cantidad++
+    } else {
+        productoAgregado.cantidad = 1
+        productosEnCarrito.push(productoAgregado)
     }
-    const total = carrito.reduce((acc, producto) => acc + producto.precio * producto.unidades, 0)
-    alert(`Gracias por su compra. El total a abonar es: ${total} `) 
 
+    actualizarNumerito()
+
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
+}
+
+function actualizarNumerito() {
+    let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0)
+    numerito.innerText = nuevoNumerito
 }

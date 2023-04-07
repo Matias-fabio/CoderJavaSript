@@ -4,43 +4,110 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script defer src="./js/main.js"></script>
+    <title>HardStore</title>
+    <link rel="shortcut icon" href="./Media/1474229.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/6bc3b6f01c.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <script src="./js/main.js" defer></script>
+    <script src="/js/menu.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>SleepToday</h1>
-        <h2>productos para el descanso.</h2>
-    </header>
-    <main>
-        <div class="titulo"><h3>Bienvenid@s a SleepToday</h3></div>
-        <div class="container">
-            <div class="producto">
-                <img class="producto-img" src="./MEDIA/sabanas.webp" alt="">
-                <h4>SABANAS</h4>
+
+    <div class="wrapper">
+        <header class="header-mobile">
+            <a class="navbar-brand" href="/index.html"><img class="logo" src="../media/Logo_2.png" alt=""></a>
+            <button class="open-menu" id="open-menu">
+                <i class="bi bi-list"></i>
+            </button>
+        </header>
+        <aside>
+            <button class="close-menu" id="close-menu">
+                <i class="bi bi-x"></i>
+            </button>
+            <header>
+                <a class="navbar-brand" href="/index.html"><img class="logo" src="../media/Logo_2.png" alt=""></a>
+            </header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <button id="todos" class="boton-menu boton-categoria active"> Todos los productos</button>
+                    </li>
+                    <li>
+                        <button id="motherboards" class="boton-menu boton-categoria"> Motherboards</button>
+                    </li>
+                    <li>
+                        <button id="fuentes" class="boton-menu boton-categoria"> Fuentes</button>
+                    </li>
+                    <li>
+                        <button id="notebooks" class="boton-menu boton-categoria"> Notebooks</button>
+                    </li>
+                    <li>
+                        <a class="boton-menu boton-carrito" href="./carrito.html">
+                            <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </aside>
+        <main>
+            <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
+            <div id="contenedor-productos" class="contenedor-productos">
+                <!-- Esto se va a rellenar con JS -->
             </div>
-            <div class="producto">
-                <img class="producto-img" src="./MEDIA/frasada.jpeg" alt="">
-                <h4>FRASADAS</h4>
-            </div>
-            <div class="producto">
-                <img class="producto-img" src="./MEDIA/almohada.jpg" alt="">
-                <h4>ALMOHADAS</h4>
-            </div>
-            <div class="producto">
-                <img class="producto-img" src="./MEDIA/COLCHON.jpg" alt="">
-                <h4>COLCHONES</h4>
-            </div>
+        </main>
+    </div>
+    <div class="swiffy-slider slider-item-show4 slider-nav-outside slider-nav-dark slider-nav-sm slider-nav-visible slider-nav-page slider-item-snapstart slider-nav-autoplay slider-nav-autopause slider-item-ratio slider-item-ratio-contain slider-item-ratio-32x9 bg-white shadow-lg py-3 py-lg-4" data-slider-nav-autoplay-interval="2000">
+        <div class="slider-container">
+            <div><img src="./Media/rog.png" alt="..."></div>
+            <div><img src="./Media/aorus.png" loading="lazy" alt="..."></div>
+            <div><img src="./Media/Razer-Symbol.jpg" loading="lazy" alt="..."></div>
+            <div><img src="./Media/corsair.png" loading="lazy" alt="..."></div>
+            <div><img src="./Media/ryzen.png" loading="lazy" alt="..."></div>
+            <div><img src="./Media/nvidia.png" loading="lazy" alt="..."></div>
+            <div><img src="./Media/readdragon.png" loading="lazy" alt="..."></div>
+            <div><img src="./Media/nzxt.png" loading="lazy" alt="..."></div>
+            <div><img src="./Media/samsung.png" loading="lazy" alt="..."></div>
+            <div><img src="./Media/asus.jpg" loading="lazy" alt="..."></div>
+            <div><img src="./Media/2021-Keychron_wr.png" loading="lazy" alt="..."></div>
+            <div><img src="./Media/msi.png" loading="lazy" alt="..."></div>
+            <div><img src="./Media/logitech.png" loading="lazy" alt="..."></div>
         </div>
-        <div class="div-carrito">
-            <button class="button">Finalizar Compra</button>
+    </div>
+    <!-- footer -->
+    <footer class="foot">
+        <div>
+            <h4>Nuestras Redes</h4>
         </div>
-    </main>
-    <footer>
-        <br>
-        <p>Estudiante: Matias Fabio</p>
-        <p>Comisión JavaScript 39470 </p>
+        <div class="redes" id="red-social">
+            <a href="#" class="link">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="link">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="link">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#" class="link">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+        </div>
+
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+
 </body>
+    
+
 </html>
