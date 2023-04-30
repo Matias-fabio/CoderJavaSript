@@ -7,7 +7,7 @@
             "nombre": "motherboards",
             "id": "motherboards"
         },
-        "precio": 1000
+        "precio": 14000
     },
     {
         "id": "Motherboard-02",
@@ -17,7 +17,7 @@
             "nombre": "motherboards",
             "id": "motherboards"
         },
-        "precio": 1000
+        "precio": 18000
     },
     {
         "id": "Motherboard-03",
@@ -27,7 +27,7 @@
             "nombre": "motherboards",
             "id": "motherboards"
         },
-        "precio": 1000
+        "precio": 26000
     },
     {
         "id": "Motherboard-04",
@@ -37,7 +37,7 @@
             "nombre": "motherboards",
             "id": "motherboards"
         },
-        "precio": 1000
+        "precio": 50000
     },
     {
         "id": "Motherboard-05",
@@ -47,7 +47,7 @@
             "nombre": "motherboards",
             "id": "motherboards"
         },
-        "precio": 1000
+        "precio": 47300
     },
     {
         "id": "fuente-01",
@@ -57,7 +57,7 @@
             "nombre": "fuentes",
             "id": "fuentes"
         },
-        "precio": 1000
+        "precio": 12000
     },
     {
         "id": "fuente-02",
@@ -67,7 +67,7 @@
             "nombre": "fuentes",
             "id": "fuentes"
         },
-        "precio": 1000
+        "precio": 13000
     },
     {
         "id": "fuente-03",
@@ -77,7 +77,7 @@
             "nombre": "fuentes",
             "id": "fuentes"
         },
-        "precio": 1000
+        "precio": 18000
     },
     {
         "id": "fuente-04",
@@ -87,7 +87,7 @@
             "nombre": "fuente",
             "id": "fuentes"
         },
-        "precio": 1000
+        "precio": 29870
     },
     {
         "id": "fuente-05",
@@ -97,7 +97,7 @@
             "nombre": "fuentes",
             "id": "fuentes"
         },
-        "precio": 1000
+        "precio": 31000
     },
     {
         "id": "fuente-06",
@@ -107,7 +107,7 @@
             "nombre": "fuentes",
             "id": "fuentes"
         },
-        "precio": 1000
+        "precio": 31900
     },
     {
         "id": "fuente-07",
@@ -117,7 +117,7 @@
             "nombre": "fuentes",
             "id": "fuentes"
         },
-        "precio": 1000
+        "precio": 15000
     },
     {
         "id": "fuente-08",
@@ -127,7 +127,7 @@
             "nombre": "fuentes",
             "id": "fuentes"
         },
-        "precio": 1000
+        "precio": 42000
     },
     {
         "id": "notebook-01",
@@ -137,7 +137,7 @@
             "nombre": "notebooks",
             "id": "notebooks"
         },
-        "precio": 1000
+        "precio": 100000
     },
     {
         "id": "notebook-02",
@@ -147,7 +147,7 @@
             "nombre": "notebooks",
             "id": "notebooks"
         },
-        "precio": 1000
+        "precio": 180000
     },
     {
         "id": "notebook-03",
@@ -157,7 +157,7 @@
             "nombre": "notebooks",
             "id": "notebooks"
         },
-        "precio": 1000
+        "precio": 250000
     },
     {
         "id": "notebook-04",
@@ -167,7 +167,7 @@
             "nombre": "notebooks",
             "id": "notebooks"
         },
-        "precio": 1000
+        "precio": 273000
     },
     {
         "id": "notebook-05",
@@ -177,6 +177,6 @@
             "nombre": "notebooks",
             "id": "notebooks"
         },
-        "precio": 1000
+        "precio": 425000
     }
 ]

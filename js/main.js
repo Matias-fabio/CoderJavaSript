@@ -1,12 +1,10 @@
 let productos = []
+const URL = "./js/productos.json"
 
-fetch("./js/productos.json")
+fetch(URL)
     .then(response => response.json())
-    .then(data => {
-        productos = data
-        cargarProductos(productos)
-    })
-
+    .then(data => {productos.push(...data)})
+    .then(()=>{cargarProductos(productos)})
 
 const contenedorProductos = document.querySelector("#contenedor-productos")
 const botonesCategorias = document.querySelectorAll(".boton-categoria")
@@ -18,7 +16,6 @@ const numerito = document.querySelector("#numerito")
 botonesCategorias.forEach(boton => boton.addEventListener("click", () => {
     aside.classList.remove("aside-visible")
 }))
-
 
 function cargarProductos(productosElegidos) {
 
@@ -40,7 +37,7 @@ function cargarProductos(productosElegidos) {
         contenedorProductos.append(div)
     })
 
-    actualizarBotonesAgregar()
+    actualizarBotonesCargar()
 }
 
 
@@ -63,7 +60,7 @@ botonesCategorias.forEach(boton => {
     })
 })
 
-function actualizarBotonesAgregar() {
+function actualizarBotonesCargar() {
     botonesAgregar = document.querySelectorAll(".producto-agregar")
 
     botonesAgregar.forEach(boton => {
@@ -83,6 +80,25 @@ if (productosEnCarritoLS) {
 }
 
 function agregarAlCarrito(e) {
+    Toastify({
+        text: "Producto agregado",
+        duration: 3000,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to bottom, #de48b5 0%, #5f17a3 100%)",
+            borderRadius: "3px",
+            textTransform: "uppercase",
+            fontSize: "12px"
+        },
+        offset: {
+            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
 
     const idBoton = e.currentTarget.id
     const productoAgregado = productos.find(producto => producto.id === idBoton)
